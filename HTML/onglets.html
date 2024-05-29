@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/CSS/onglets.css">
+    <link rel="stylesheet" href="/CSS/default.css">
+    <title>Sirine Santé</title>
+</head>
+<body>
+<div class="container">
+    <div id="onglets">
+        <div class="tabs">
+            <button id="tab-accueil" class="tab-button active" onclick="switchTab('content-accueil')">Accueil</button>
+            <button id="tab-rdv" class="tab-button" onclick="switchTab('content-rdv')">Rendez-vous</button>
+            <button id="tab-historique" class="tab-button" onclick="switchTab('content-historique')">Historique</button>
+            <button id="tab-documents" class="tab-button" onclick="switchTab('content-documents')">Documents</button>
+            <button id="tab-messages" class="tab-button" onclick="switchTab('content-messages')">Messages</button>
+            <button id="tab-compte" class="tab-button" onclick="switchTab('content-compte')">Compte</button>
+        </div>
+        
+        <div id="content-accueil" class="tab-content">
+            <h1>Mes Rendez-vous à venir...</h1>    
+        </div>
+
+        <div id="content-rdv" class="tab-content">
+
+        </div>
+
+        <div id="content-historique" class="tab-content">
+            <h1>Mes Rendez-vous passés</h1>
+        </div>
+
+        <div id="content-documents" class="tab-content">
+            <h1>Mes documents</h1>
+        </div>
+
+        <div id="content-messages" class="tab-content">
+            <h1>Mes discussions</h1>
+        </div>
+
+        <div id="content-compte" class="tab-content">
+            <h1>Mes informations personnelles</h1>
+            <form id="user-info-form">
+                <div>
+                    <label for="nom">Nom :</label>
+                    <input type="text" id="nom" name="nom" readonly>
+                </div>
+                <div>
+                    <label for="prenom">Prénom :</label>
+                    <input type="text" id="prenom" name="prenom" readonly>
+                </div>
+                <div>
+                    <label for="date_naissance">Date de Naissance :</label>
+                    <input type="text" id="date_naissance" name="date_naissance" readonly>
+                </div>
+                <div>
+                    <button type="button" id="edit-btn">Modifier</button>
+                    <button type="submit" id="save-btn" style="display:none;">Enregistrer</button>
+                </div>
+            </form>
+            <button id="logout-btn">Déconnexion</button>
+        </div>
+    
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="/js/functions.js"></script>
+</body>
+</html>

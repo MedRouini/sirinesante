@@ -1,0 +1,66 @@
+####
+# Ajout d'options
+##
+	Options +FollowSymlinks
+	AddDefaultCharset utf-8
+	SetEnv DEVELOPMENT Off
+#
+####
+
+####
+# Suppression d'options
+##
+	Options -Indexes
+#
+####
+
+####
+# Configuration des modules
+##
+	RewriteEngine on
+#
+####
+# Impl�mentation du Module d emise en cache
+##
+<IfModule mod_headers.c>
+  # Mise en cache des images et autres fichier statiques pour un mois
+  <FilesMatch ".(ico|jpe?g|png|gif|swf|flv|css|js|gz|pdf)$">
+   Header set Cache-Control "max-age=2592000"
+  </FilesMatch>
+
+  # Mise en cache du html et xml pour 12 heures
+  <filesMatch ".(html|htm|xml)$">
+   Header set Cache-Control "max-age=43200"
+  </filesMatch>
+
+  # D�sactive la mise en cache pour les fichier PHP et CGI
+  <FilesMatch ".(php|cgi)$">
+   Header unset Cache-Control
+  </FilesMatch>
+</IfModule>
+
+####
+
+####
+# Récriture des URLs
+##
+
+	####
+	# Blocage de consultation de fichier
+	##
+		RewriteCond %{REQUEST_URI} (index|backup).php$
+		RewriteRule	(.*)								$1									[L]
+		RewriteCond %{REQUEST_URI} .(js|css|icx|ico|icns|jpg|jpeg|png|gif|svg|swf|fla|mp3|mov|wav|txt|pdf|rtf|doc|docx|xls|xlsx|ppt|pptx|pps|zip|log|csv|sql|xml|wsdl)$
+		RewriteRule	(.*)								$1									[L]
+	#
+	####
+
+		#mod = 1 --> consulter
+		#mod = 2 --> creer
+		#mod = 3 --> modifier
+		#mod = 4 --> duppliquer
+	####
+	# R��critures particuli�res
+	##
+
+		RewriteRule	^login.html$																								index.php?page=login								[L]

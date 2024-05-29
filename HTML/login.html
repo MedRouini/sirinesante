@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="/CSS/login.css">
+  <title>Connexion</title>
+</head>
+<body>
+  <div class="container">
+    <h1>Connexion</h1>
+    <form id="loginForm" method="POST" action="../PHP/login.php">
+      <input type="text" id="id_user" name="id_user" placeholder="ID utilisateur" required>
+      <select id="user_type" name="user_type" required>
+          <option value="patient">Patient</option>
+          <option value="medecin">Médecin</option>
+      </select>
+      <input type="password" id="password" name="password" placeholder="Mot de passe" required>
+      <button type="submit">Se connecter</button>
+    </form> <!-- Ajout de la balise de fermeture du formulaire -->
+  </div>
+</body>
+</html>
