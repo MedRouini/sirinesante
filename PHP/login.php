@@ -1,11 +1,11 @@
 <?php
+session_start();
 include_once 'init_connect.php';
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $id_user = htmlspecialchars($_POST["id_user"]);
     $user_type = htmlspecialchars($_POST["user_type"]);
     $password = htmlspecialchars($_POST["password"]);
-
     try {
         if ($user_type === 'patient') {
             $sql = "SELECT * FROM PATIENT WHERE id_patient = :id_user";

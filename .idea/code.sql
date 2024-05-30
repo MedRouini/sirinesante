@@ -35,6 +35,7 @@ CREATE TABLE MEDECIN (
   Date_Naissance VARCHAR(10),  
   Sexe CHAR(1),         
   N_Securite_Social VARCHAR(13),
+  password VARCHAR(150),
 
   PRIMARY KEY (id_medecin)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
@@ -46,6 +47,7 @@ CREATE TABLE PATIENT (
   Date_Naissance VARCHAR(10), 
   Sexe CHAR(1),        
   N_Securite_Social VARCHAR(13),
+  password VARCHAR(150),
   
   PRIMARY KEY (id_patient)
 ) ENGINE=InnoDB DEFAULT CHARSET=UTF8MB4;
